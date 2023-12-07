@@ -1,0 +1,24 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "El mejor curso de node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leonardo200298/node_js.git"
+  },
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs"
+  ],
+  "author": "Leonardo Antonio Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leonardo200298/node_js/issues"
+  },
+  "homepage": "https://github.com/Leonardo200298/node_js#readme"
+}
