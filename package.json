@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Leonardo200298/node_js/issues"
   },
-  "homepage": "https://github.com/Leonardo200298/node_js#readme"
+  "homepage": "https://github.com/Leonardo200298/node_js#readme",
+  "dependencies": {
+    "picocolors": "1.0.0"
+  }
 }
+

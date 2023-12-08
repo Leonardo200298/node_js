@@ -1,5 +1,6 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const picocolors = require('picocolors');
 
 const folder = process.argv[2] ?? '.';
 
@@ -9,7 +10,7 @@ async function ls(folder) {
         files = await fs.readdir(folder); // Usar await aquí para esperar la respuesta de la promesa
 
     } catch {
-        console.error(`No se ha podido leer el directorio ${folder}`);
+        console.error(picocolors.red(`No se ha podido leer el directorio ${folder}`));
         process.exit(1);
     }
     const filePromises = files.map(async file => {
@@ -28,7 +29,7 @@ async function ls(folder) {
         const fileSize = stats.size;
         const fileModified = stats.mtime.toLocaleString();
 
-        return `${fileType} ${file.padEnd(20)} ${fileSize.toString().padStart(10)} ${fileModified}`;
+        return `${fileType} ${picocolors.blue(file.padEnd(20))} ${picocolors.green(fileSize.toString().padStart(10))} ${picocolors.yellow(fileModified)}`;
     });
     const filesInfo = await Promise.all(filePromises); // Usar filePromises aquí en lugar de filesPromises
     filesInfo.forEach(fileInfo => console.log(fileInfo));
