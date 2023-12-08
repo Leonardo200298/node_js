@@ -23,6 +23,8 @@
   "homepage": "https://github.com/Leonardo200298/node_js#readme",
   "dependencies": {
     "picocolors": "1.0.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
   }
 }
-
