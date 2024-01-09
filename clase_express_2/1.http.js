@@ -1,3 +1,4 @@
+const fs = require('node:fs');
 const http = require('node:http')
 
 
@@ -11,6 +12,16 @@ const processRequest = (req, res) => {
     }else if (req.url === '/prueba'){
         res.statusCode = 200;
         res.end('<h3>Estas en la seccion prueba</h3>')
+    }else if (req.url === '/imagen'){
+        fs.readFile('./images/imagen.png', (err,data)=>{
+            if (err) {
+                res.statusCode = 500;
+                res.end('<h4>Internal Server Error')
+            }else{
+                res.setHeader('Content-Type', 'image/png');
+                res.end(data)
+            }
+        })
     }else{
         res.statusCode = 404;
         res.end('Ruta no encontrada')
